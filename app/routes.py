@@ -27,7 +27,7 @@ def login():
     """
     form = LoginForm()
     if form.validate_on_submit():
-        admin = User.query.get(form.username.data)
+        admin = User.query.filter_by(username=form.username.data).first()
         if admin:
             if check_password_hash(admin.password, form.password.data):
                 login_user(admin)
