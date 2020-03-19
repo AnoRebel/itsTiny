@@ -3,7 +3,7 @@
 from getpass import getpass
 import sys
 
-from app import app
+from wsgi import app
 from werkzeug.security import generate_password_hash
 from app.models import db, User
 
