@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="d-flex flex-column align-items-center mt-4">
+        <h1 class="text-center text-white my-4 font-weight-bold">itsTiny</h1>
+        <form action="{{ url_for('index') }}" method="POST" class="my-4 form-inline w-50">
+          {{ form.csrf_token }}
+          {{ form.full.label(class_="sr-only") }}
+          {{ form.full(class_="form-control form-control-lg col mr-2", placeholder="Url") }}
+          {% if form.full.errors %}
+            <ul class=errors>
+            {% for error in form.full.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+          <button class="btn btn-lg btn-info" type="submit">Shrink</button>
+        </form>
+
+    {% if codes != [] %}
+        <table class="table table-striped table-responsive-sm table-dark table-bordered table-hover w-75">
+          <thead>
+            <tr>
+              <th>Full URL</th>
+              <th>Short URL</th>
+              <th>Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for code in codes %}
+              <tr>
+                <td><a href="{{ code.full }}">{{ code.full }}</a></td>
+                <td><a href="{{ code.short }}">{{ code.short }}</a></td>
+                <td>{{ code.clicks }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    {% elif codes == [] %}
+        <h5 class="font-weight-bold"><em>Nothing Added Yet!</em></h5>
+    {% endif %}
+    </div>
+
+{% endblock content %}

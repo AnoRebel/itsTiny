@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center h-100 w-100 mt-5">
+    <h1 class="font-weight-bold text-center text-white my-4">Admin Login</h1>
+    <form method="POST" action="{{ url_for('login') }}" class="w-50">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.username.label(class_="text-white") }}
+            {{ form.username(size=20, class_="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.password.label(class_="text-white") }}
+            {{ form.password(size=20, class_="form-control") }}
+        </div>
+        <button class="btn btn-lg btn-success my-4" type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}
