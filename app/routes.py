@@ -31,7 +31,7 @@ def login():
         if admin:
             if check_password_hash(admin.password, form.password.data):
                 login_user(admin)
-                return redirect(url_for("admin"))
+                return redirect("/admin")
     return render_template("login.html", form=form)
 
 
