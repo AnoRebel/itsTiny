@@ -20,7 +20,7 @@ def user():
         password = getpass("Password: ")
         assert password == getpass("Password (again): ")
 
-        if User.query.get(username):
+        if User.query.filter_by(username=username).first():
             exists = input("Username already exists, try another one? (y/n): ")
             if exists == "n":
                 return
