@@ -30,8 +30,8 @@
           <tbody>
             {% for code in codes %}
               <tr>
-                <td><a href="{{ code.full }}">{{ code.full }}</a></td>
-                <td><a href="{{ code.short }}">{{ code.short }}</a></td>
+                <td><a href="{{ code.full }}" target="_blank">{{ code.full }}</a></td>
+                <td><a href="{{ code.short }}" target="_blank">{{ code.short }}</a></td>
                 <td>{{ code.clicks }}</td>
               </tr>
             {% endfor %}
