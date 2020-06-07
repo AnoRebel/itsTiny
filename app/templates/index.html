@@ -4,6 +4,7 @@
 
     <div class="d-flex flex-column align-items-center mt-4">
         <h1 class="text-center text-white my-4 font-weight-bold">itsTiny</h1>
+        <p class="text-center text-white">Enter a long URL and get a shortcode for it. Kudos</p>
         <form action="{{ url_for('index') }}" method="POST" class="my-4 form-inline w-50">
           {{ form.csrf_token }}
           {{ form.full.label(class_="sr-only") }}
