@@ -34,19 +34,22 @@ To run this;
 
   - Initialize database and run:
  	- In development:
-	 	`bash
+	 	```bash
 	 	 export FLASK_ENV=development
 	 	 export FLASK_APP=app
 	 	 flask db upgrade
-	 	 flask run`
+	 	 flask run
+	 	```
 	 	
 	 - In production:
-	 	`bash
+	 	```bash
 	 	 export FLASK_APP=app
 	 	 flask db upgrade
-	 	 flask run`
+	 	 flask run
+	 	```
 
   - Run create_admin.py and follow prompts to create admin user then visit <address>/admin
 
-  		`python
-  		 python3 create_admin.py`
+  		```bash
+  		 python3 create_admin.py
+  		```
