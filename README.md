@@ -48,8 +48,6 @@ To run this;
 	 	 flask run
 	 	```
 
-  - Run create_admin.py and follow prompts to create admin user then visit <address>/admin
+  - Run create_admin.py and follow prompts to create admin user then visit https://URL/admin
 
-  		```bash
-  		 python3 create_admin.py
-  		```
+  		`python3 create_admin.py`
